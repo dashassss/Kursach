@@ -1,0 +1,330 @@
+$font-stack:    'Square Peg', cursive;
+$color: #06565b;
+body{
+    margin: 0;
+    width: 100%;
+      background-color: rgba(194,221,228,1);
+  }
+  header{
+    padding: 0 30px 0 10px;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    background-color: #003a44;
+    
+  }
+  .toplogo{
+    padding: 7px 0 0px;
+    height: 65px;
+  
+  }
+  .topnav{
+    display: flex;
+  }
+  .top_menu li{
+    padding: 10px 0 0 0;
+    display: inline-block;
+  }
+  .top_menu a{
+    text-decoration: none;
+    font-size: 20px;
+    font-family: $font-stack;
+    text-transform: uppercase;
+    color:#66a4ac;
+    letter-spacing: 2px;
+    padding: 0px 18px 0 5px;
+  }
+  .top_menu a:hover{
+    color:#ffffff;
+  }
+  .wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 160px;
+  }  
+  #menu__toggle {
+    display: none;
+  }
+.cont{
+    display: flex;
+    flex-direction: column;
+    h1{
+        color:$color;
+        font-family: $font-stack;
+        text-align: center;
+    }
+}
+form{
+    display: flex;
+    flex-direction: column;
+    h3{
+      color: $color;
+      font-family: $font-stack;
+      overflow: hidden;
+    }
+  }
+.ordering{
+    width: auto;
+  align-items: center; 
+  justify-content: center;
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    select{
+        font-size: 13px;
+        width: 262px;
+        height: 42px;
+        background: #fff;
+        border-radius: 5px;
+        border: 1px solid #c6c7cc;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+        color: #636466;
+        padding: 5px;
+    }
+  }
+  
+}
+label {
+    color: #395870;
+    display: block;
+    font-weight: bold;
+    h3{
+        display: inline;
+        color:$color;
+        font-family: $font-stack;
+    }
+  }
+  input {
+    width: 250px;
+    height: 30px;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #c6c7cc;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    color: #636466;
+    padding: 5px;
+  
+  }
+  .butt{
+    button {
+      width: 250px;
+      margin-top: 20px;
+      border: none;
+      background: #003a44;
+      color: #f2f2f2;
+      padding: 10px;
+      font-size: 15px;
+      border-radius: 5px;
+      position: relative;
+      box-sizing: border-box;
+      transition: all 500ms ease; 
+    }
+    
+    button:hover {
+      background: rgba(0,0,0,0);
+      color: #395870;
+      box-shadow: inset 0 0 0 1px #3a7999;
+    }
+  }
+
+  footer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: #003a44;
+    height: 270px;
+    flex-shrink: 0;
+    justify-content: center;
+    gap:20px;
+  }
+  .left{
+    display: flex;
+  flex-direction: column;
+  
+  p{
+   
+    color: rgba(194,221,228,1);
+    font-family: $font-stack;
+    font-size: 12px;
+  }
+  }
+  .right{
+    display: flex;
+    flex-direction: column;
+    p{
+      color:  rgba(194,221,228,1);
+    font-family: $font-stack;
+    font-size: 12px;
+    }
+    img{
+      align-items: center;
+    }
+  }
+  @media(max-width: 1000px){
+    /* скрываем чекбокс */
+    #menu__toggle {
+      display: block;
+      opacity: 0;
+    }
+    /* стилизуем кнопку */
+    .menu__btn {
+      display: flex; /* используем flex для центрирования содержимого */
+      align-items: center;  /* центрируем содержимое кнопки */
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 26px;
+      height: 26px;
+      cursor: pointer;
+      z-index: 1;
+    }
+    /* добавляем "гамбургер" */
+    .menu__btn > span,
+    .menu__btn > span::before,
+    .menu__btn > span::after {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #ffffff;
+    }
+    .menu__btn > span::before {
+      content: '';
+      top: -8px;
+    }
+    .menu__btn > span::after {
+      content: '';
+      top: 8px;
+    }
+    
+    /* контейнер меню */
+    .menu__box {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      visibility: hidden;
+      top: 0;
+      right: -100%;
+      width: 300px;
+      height: 100%;
+      margin: 0;
+      padding: 80px 0;
+      list-style: none;
+      text-align: center;
+      background-color: #06565b;
+      box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    }
+    /* элементы меню */
+    .menu__item {
+      display: block;
+      margin: 12px 0 12px 0;
+      padding: 12px 24px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    
+    .menu__item:hover {
+      background-color: #CFD8DC;
+    }
+    
+    #menu__toggle:checked ~ .menu__btn > span {
+      transform: rotate(45deg);
+    }
+    #menu__toggle:checked ~ .menu__btn > span::before {
+      top: 0;
+      transform: rotate(0);
+    }
+    #menu__toggle:checked ~ .menu__btn > span::after {
+      top: 0;
+      transform: rotate(90deg);
+    }
+    #menu__toggle:checked ~ .menu__box {
+      visibility: visible;
+      right: 0;
+    }
+    
+    .menu__btn > span,
+    .menu__btn > span::before,
+    .menu__btn > span::after {
+      transition-duration: .25s;
+    }
+    .menu__box {
+      transition-duration: .25s;
+    }
+    .menu__item {
+      transition-duration: .25s;
+    }
+    .toplogo{
+      height: 50px;
+      padding: 10px 0 0px;
+    }
+    .wrapper{
+      gap:50px;
+    }
+}
+@media(max-width: 550px){
+    .cont{
+        h1{
+            font-size: 20px;
+        }
+    }
+    form{
+        h3{
+            font-size: 13px;
+        }
+    }
+    .ordering{
+        width: auto;
+        align-items: center; 
+        justify-content: center;
+        section{
+            select{
+            width: 108px;
+            height: 33px;
+            gap: 2px;
+            padding: 3px;
+        }
+    }
+      }
+      input{
+          width: 100px;
+          height: 25px;
+          padding: 3px;
+      }
+      .butt{
+          button{
+          width: 100px;
+          height: 25px;
+          padding: 5px;
+          }
+      }
+      
+    footer{
+      text-align: center;
+  }
+  .left{
+    p{
+    font-size: 9px;
+  }
+  }
+  .right{
+    p{
+      font-size: 9px;
+    }
+    img{
+      width:10px ;
+      height: 10px;
+    }
+  }
+  }
+  @media(max-width: 390px){
+    footer{
+      height: 380px;
+      
+  }
+  }  
+    

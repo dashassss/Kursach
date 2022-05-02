@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказ билетов</title>
+    <link rel="stylesheet" href=".\CSS\tickets.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="tophead">
+           <img src="img/logotip.png" class="toplogo">
+            <nav class="topnav hamburger-menu">
+                <input id="menu__toggle" type="checkbox" />
+                <label class="menu__btn" for="menu__toggle">
+                  <span></span>
+                </label>
+                <ul class="top_menu menu__box">
+                    <li><a class="menu__item" href="file:///D:/Kursach/general.html">Главная</a></li>
+                    <li><a class="menu__item" href="file:///D:/Kursach/theatre.html">О театре</a></li>
+                    <li><a class="menu__item" href="file:///D:/Kursach/afisha.html">Афиша</a></li>
+                    <li><a class="menu__item" href="file:///D:/Kursach/contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+          </header>
+          <main class="cont">
+              <h1>Форма оформления заказа</h1>
+            <form class="ordering">
+                <section>
+                    <label>
+                        <h3>ФИО</h3>
+                    </label>
+                        <input type="text" name="Name"  placeholder="ФИО">
+                </section>
+                <section>
+                    <label>
+                        <h3>Email</h3>
+                    </label>
+                    <input required type="email" name="Email" placeholder="Email">
+                </section>
+                <section>
+                    <label>
+                        <h3>Телефон</h3>
+                    </label>
+                    <input name="phone" placeholder="Телефон">
+                </section>
+                <section>
+                    <label>
+                    <h3>Название</h3>
+                </label>
+                    <select> 
+                        <option>Ромео и Джульетта</option> 
+                         <option>Спящая красавица</option>
+                         <option>Лебединое озеро</option>
+                         <option>Анна Каренина</option>
+                         <option>Золушка</option>
+                         <option>Дон Кихот</option>
+                         <option>Гамлет</option>
+                         <option>Щелкунчик</option>
+                         <option>Евгений Онегин</option>
+                         <option> Пиковая Дама</option>
+                         <option>Травиата</option>
+                         <option>Царская невеста</option>
+                      </select>
+                    </section>
+                    <section>
+                      <label>
+                          <h3> Количество:</h3>
+                        </label>
+                        <input name="number" placeholder="Количество"/>
+                    </section>
+                    <section>
+                        <label>
+                            <h3> Дата спектакля</h3>
+                        </label>
+                            <input type="date"/>
+                        </section>
+                        <div class="butt">
+                            <button type="submit">Купить</button>
+                          </div> 
+            </form>
+          </main>
+          <footer>
+            <section class="left">
+            <p>Большой театр Беларуси</p>
+            <p>220002, г. Минск, пл. Парижской коммуны, 1</p>
+            <p>Cправочный круглосуточный: +375 (17) 361 54 93</p>
+            <p>Касса: +375 17 243-10-41</p>
+            <p>teatr@bolshoibelarus.by</p>
+          </section>
+          <section class="right">
+              <p>Присоединяйтесь к нам в соцсетях</p>
+              <p><img src="img/inst.svg">
+              bolshoibelarus</p>
+              <p> <img src="img/facebook.svg">
+              Bolshoi Theatre of Belarus</p>
+              <p><img src="img/vk.svg">
+              Большой театр Беларуси</p>
+              <p> Время работы:</p>
+              <p> с 10.00 до 20.00 без выходных</p>
+          </section>
+        </footer>
+    </div>
+</body>
+</html>

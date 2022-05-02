@@ -1,0 +1,347 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  width: 100%;
+  background-color: #c2dde4;
+}
+
+header {
+  padding: 0 30px 0 10px;
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  background-color: #003a44;
+}
+
+.toplogo {
+  padding: 7px 0 0px;
+  height: 65px;
+}
+
+.topnav {
+  display: flex;
+}
+
+.top_menu li {
+  padding: 10px 0 0 0;
+  display: inline-block;
+}
+
+.top_menu a {
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "Square Peg", cursive;
+  text-transform: uppercase;
+  color: #66a4ac;
+  letter-spacing: 2px;
+  padding: 0px 18px 0 5px;
+}
+
+.top_menu a:hover {
+  color: #ffffff;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 160px;
+}
+
+#menu__toggle {
+  display: none;
+}
+
+.container-afisha {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.container-afisha h1 {
+  color: #06565b;
+  font-family: "Square Peg", cursive;
+  text-align: center;
+}
+
+.cont_afisha {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.perfomance_one, .perfomance_two, .perfomance_three {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.perfomance_one img, .perfomance_two img, .perfomance_three img {
+  width: 375px;
+  height: 250px;
+}
+
+.hover-effect-cover {
+  list-style: none;
+  margin: 0 auto;
+  width: 375px;
+  text-align: center;
+  padding: 0;
+}
+
+.hover-effect-cover li {
+  position: relative;
+  height: 250px;
+  width: 375px;
+  /* Задаем ширину элемента списка с картинкой*/
+  display: inline-block;
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Заголовок, текст и ссылка */
+.hover-effect-cover li h3 {
+  color: #fff;
+  margin: 5px;
+  font-family: "Square Peg", cursive;
+}
+
+.hover-effect-cover li p {
+  color: #fff;
+  font-family: "Square Peg", cursive;
+  margin: 5px;
+}
+
+.hover-effect-cover li a {
+  font-family: "Square Peg", cursive;
+  display: block;
+  text-decoration: none;
+  padding: 15px;
+  color: #fff;
+  background: #000;
+  border-radius: 5px;
+  margin: 0 auto;
+  transition: all 0.4s ease-in-out;
+}
+
+.hover-effect-cover li a:hover {
+  background: #454545;
+  color: #fff;
+}
+
+/* Выезжающий блок с текстом для панели слева направо */
+.hover-effect-cover li > div.effect-to-right {
+  width: 375px;
+  height: 250px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hover-effect-cover li:hover > div.effect-to-right {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.hover-effect-cover li div.effect-to-right {
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  /* Фон блока при наведении */
+  transition: all 0.4s ease-in-out;
+  color: #fff;
+  transform: translate(-250px, 0px) rotate(0deg);
+  /* Направление выезжающей панели */
+}
+
+.hover-effect-cover li:hover div.effect-to-right {
+  opacity: 1;
+  transform: translate(0px, 0px) rotate(0deg);
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: #003a44;
+  height: 270px;
+  flex-shrink: 0;
+  justify-content: center;
+  gap: 20px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.left p {
+  color: #c2dde4;
+  font-family: "Square Peg", cursive;
+  font-size: 12px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+}
+
+.right p {
+  color: #c2dde4;
+  font-family: "Square Peg", cursive;
+  font-size: 12px;
+}
+
+.right img {
+  align-items: center;
+}
+
+@media (max-width: 1000px) {
+  /* скрываем чекбокс */
+  #menu__toggle {
+    display: block;
+    opacity: 0;
+  }
+  /* стилизуем кнопку */
+  .menu__btn {
+    display: flex;
+    /* используем flex для центрирования содержимого */
+    align-items: center;
+    /* центрируем содержимое кнопки */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  /* добавляем "гамбургер" */
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+  /* контейнер меню */
+  .menu__box {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: #06565b;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+  }
+  /* элементы меню */
+  .menu__item {
+    display: block;
+    margin: 12px 0 12px 0;
+    padding: 12px 24px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .menu__item:hover {
+    background-color: #CFD8DC;
+  }
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    right: 0;
+  }
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    transition-duration: .25s;
+  }
+  .menu__box {
+    transition-duration: .25s;
+  }
+  .menu__item {
+    transition-duration: .25s;
+  }
+  .toplogo {
+    height: 50px;
+    padding: 10px 0 0px;
+  }
+  .wrapper {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 400px) {
+  .hover-effect-cover img {
+    width: 250px;
+    height: 170px;
+    border-radius: 10px;
+  }
+  .hover-effect-cover li {
+    width: 250px;
+    height: 170px;
+    border-radius: 10px;
+  }
+  .cont_afisha {
+    gap: 5px;
+  }
+  .hover-effect-cover li > div.effect-to-right {
+    width: 250px;
+    height: 170px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 550px) {
+  footer {
+    text-align: center;
+  }
+  .left p {
+    font-size: 9px;
+  }
+  .right p {
+    font-size: 9px;
+  }
+  .right img {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 390px) {
+  footer {
+    height: 380px;
+  }
+}
