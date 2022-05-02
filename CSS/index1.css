@@ -218,7 +218,7 @@ footer {
     width: 26px;
     height: 26px;
     cursor: pointer;
-    z-index: 1;
+    z-index: 3;
   }
   /* добавляем "гамбургер" */
   .menu__btn > span,
@@ -229,8 +229,10 @@ footer {
     width: 100%;
     height: 2px;
     background-color: #ffffff;
+    z-index: 3;
   }
   .menu__btn > span::before {
+    z-index: 2;
     content: '';
     top: -8px;
   }
@@ -244,6 +246,7 @@ footer {
     flex-direction: column;
     position: fixed;
     visibility: hidden;
+    z-index: 2;
     top: 0;
     right: -100%;
     width: 300px;
@@ -272,6 +275,7 @@ footer {
     transform: rotate(45deg);
   }
   #menu__toggle:checked ~ .menu__btn > span::before {
+    z-index: 3;
     top: 0;
     transform: rotate(0);
   }
@@ -287,6 +291,7 @@ footer {
   .menu__btn > span::before,
   .menu__btn > span::after {
     transition-duration: .25s;
+    z-index: 3;
   }
   .menu__box {
     transition-duration: .25s;
