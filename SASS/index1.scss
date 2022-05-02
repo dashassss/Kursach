@@ -190,99 +190,102 @@ p{
   @media(max-width: 1000px){
     /* скрываем чекбокс */
     #menu__toggle {
-      display: block;
-      opacity: 0;
-    }
-    /* стилизуем кнопку */
-    .menu__btn {
-      display: flex; /* используем flex для центрирования содержимого */
-      align-items: center;  /* центрируем содержимое кнопки */
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      width: 26px;
-      height: 26px;
-      cursor: pointer;
-      z-index: 1;
-    }
-    /* добавляем "гамбургер" */
-    .menu__btn > span,
-    .menu__btn > span::before,
-    .menu__btn > span::after {
-      display: block;
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      background-color: #ffffff;
-    }
-    .menu__btn > span::before {
-      content: '';
-      top: -8px;
-    }
-    .menu__btn > span::after {
-      content: '';
-      top: 8px;
-    }
-    
-    /* контейнер меню */
-    .menu__box {
-      display: flex;
-      flex-direction: column;
-      position: fixed;
-      visibility: hidden;
-      top: 0;
-      right: -100%;
-      width: 300px;
-      height: 100%;
-      margin: 0;
-      padding: 80px 0;
-      list-style: none;
-      text-align: center;
-      background-color: #06565b;
-      box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
-    }
-    /* элементы меню */
-    .menu__item {
-      display: block;
-      margin: 12px 0 12px 0;
-      padding: 12px 24px;
-      font-family: 'Roboto', sans-serif;
-      font-size: 20px;
-      font-weight: 600;
-      text-decoration: none;
-    }
-    
-    .menu__item:hover {
-      background-color: #CFD8DC;
-    }
-    
-    #menu__toggle:checked ~ .menu__btn > span {
-      transform: rotate(45deg);
-    }
-    #menu__toggle:checked ~ .menu__btn > span::before {
-      top: 0;
-      transform: rotate(0);
-    }
-    #menu__toggle:checked ~ .menu__btn > span::after {
-      top: 0;
-      transform: rotate(90deg);
-    }
-    #menu__toggle:checked ~ .menu__box {
-      visibility: visible;
-      right: 0;
-    }
-    
-    .menu__btn > span,
-    .menu__btn > span::before,
-    .menu__btn > span::after {
-      transition-duration: .25s;
-    }
-    .menu__box {
-      transition-duration: .25s;
-    }
-    .menu__item {
-      transition-duration: .25s;
-    }
+    display: block;
+    opacity: 0;
+  }
+  /* стилизуем кнопку */
+  .menu__btn {
+    display: flex;
+    /* используем flex для центрирования содержимого */
+    align-items: center;
+    /* центрируем содержимое кнопки */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 3;
+  }
+  /* добавляем "гамбургер" */
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    z-index: 3;
+  }
+  .menu__btn > span::before {
+    z-index: 2;
+    content: '';
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+  /* контейнер меню */
+  .menu__box {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    visibility: hidden;
+    z-index: 2;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: #06565b;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+  }
+  /* элементы меню */
+  .menu__item {
+    display: block;
+    margin: 12px 0 12px 0;
+    padding: 12px 24px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .menu__item:hover {
+    background-color: #CFD8DC;
+  }
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    z-index: 3;
+    top: 0;
+    transform: rotate(0);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    right: 0;
+  }
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    transition-duration: .25s;
+    z-index: 3;
+  }
+  .menu__box {
+    transition-duration: .25s;
+  }
+  .menu__item {
+    transition-duration: .25s;
+  }
     .toplogo{
       height: 50px;
       padding: 10px 0 0px;
